@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Head</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/CSS/header.css">
+    <!-- 引入layui.css -->
+    <link
+            rel="stylesheet"
+            href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css"
+    >
+    <!-- 引入layui.js -->
+    <!--<script scr="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>-->
+<script src="layui-v2.6.8/layui-v2.6.8/layui/layui.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href="index.html" class="logo">
+        <h1>Logo</h1>
+    </a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/index.jsp">首页</a></li>
+            <li><a href="#">书籍介绍</a></li>
+            <li><a href="#">实验室</a>
+                <ul class="hide">
+                    <li><a href="#">932实验室</a></li>
+                    <li><a href="#">925实验室</a></li>
+                    <li><a href="#">923实验室</a></li>
+                </ul>
+            </li>
+            <li><a href="#">教师队伍</a>
+                <ul class="hide">
+                    <li><a href="#">博士</a></li>
+                    <li><a href="#">教授</a></li>
+                    <li><a href="#">讲师</a></li>
+                </ul>
+            </li>
+            <li><a href="#">后台管理</a></li>
+        </ul>
+    </nav>
+</div>
+<img src="./static/img/9.jpg"height="40px" width="40px" style="border-radius: 200px;" scr/>
+<button id="layerBtn" class="layui-btn">弹窗</button>
+<button type="button" class="layui-btn">增加</button>
+<button type="button" class="layui-btn ">编辑</button>
+<button type="button" class="layui-btn">删除</button>
+
+<button type="button" class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius">大型加圆角</button>
+<a href="../doc/element/button.html" tppabs="https://www.layuiweb.com/doc/element/button.html" class="layui-btn" target="_blank">跳转的按钮</a>
+<button type="button" class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon"></i> 删除</button>
+<button type="button" class="layui-btn layui-btn-xs layui-btn-disabled"><i class="layui-icon"></i> 分享</button>
+<script>
+    layer.confirm('确认删除？', {
+        btn: ['是','否'] //按钮
+    }, function(){
+        layer.msg("删除成功");
+    }, function(){
+        layer.msg('取消删除！');
+    });
+
+layui.use(['layer', 'jquery', 'form'], function () {
+    // 这个时候将挂载到layui中的layer放置到一个变量上面，有助于我们调用
+    var layer = layui.layer
+    var $ = layui.jquery
+    var form = layui.form
+    // 首先第一种调用方法就是(采用的是jquery的点击事件)
+    $('#layerBtn').on('click', function (e) {
+        // 调用的layer弹窗
+       /* layer.alert('我调用了，我是layer弹窗')*/
+        layer.msg('用户名或密码错误，登录失败！')
+    })
+})
+</script>
+</body>
+</html>

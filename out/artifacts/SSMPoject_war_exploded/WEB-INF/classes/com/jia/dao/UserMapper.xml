@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jia.dao.UserMapper">
+
+
+    <select id="queryByName" resultType="com.jia.pojo.User">
+        select userName,password,type from user where userName=#{userName} and password=#{password} and type=#{type};
+    </select>
+
+    <insert id="adduser" parameterType="com.jia.pojo.User">
+        insert into user(userName, password, email,type) value (#{userName},#{password},#{email},#{type});
+    </insert>
+
+    <select id="existUsername" resultType="com.jia.pojo.User">
+        select * from user where userName=#{userName};
+    </select>
+
+    <update id="updateUser" parameterType="com.jia.pojo.User">
+        update user
+        set userName=#{userName},password=#{password},email=#{email}
+        where id=#{id}
+    </update>
+
+</mapper>
