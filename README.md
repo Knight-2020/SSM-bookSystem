@@ -2,6 +2,6 @@
 
 
 
-## 技术栈：
+## 技术栈 : 
 
 Spring、SpringMVC、Mybatis
